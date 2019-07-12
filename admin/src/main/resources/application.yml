@@ -1,0 +1,10 @@
+server:
+  port: 8012
+  servlet:
+    context-path: /vue
+
+spring:
+  profiles:
+    active:
+      - dev
+      - edged

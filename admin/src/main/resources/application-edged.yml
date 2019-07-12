@@ -1,0 +1,6 @@
+# 项目其他配置
+totoro:
+  project:
+    name: vue-master
+    version: 1.0.0M1
+    poweredBy: dengmiao
