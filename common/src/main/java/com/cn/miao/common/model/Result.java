@@ -96,7 +96,7 @@ public class Result<T> {
      * @param result
      * @return
      */
-    public static ResponseEntity<Result<?>> wrapper(Result result) {
+    public static ResponseEntity<Result<?>> wrap(Result result) {
         return new ResponseEntity(result, result.getStatus());
     }
 }

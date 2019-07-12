@@ -43,10 +43,10 @@ public interface BaseController<E, ID extends Serializable> {
     }
 
     default ResponseEntity<Result<?>> wrapper(Result result) {
-        return Result.wrapper(result);
+        return Result.wrap(result);
     }
 
     default ResponseEntity<Result<?>> list() {
-        return Result.wrapper(Result.ok());
+        return Result.wrap(Result.ok());
     }
 }
