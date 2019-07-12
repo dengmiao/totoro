@@ -36,6 +36,6 @@ public class BaseModel<T> {
     @Column(name = "update_time", columnDefinition = "datetime COMMENT '更新时间'")
     private LocalDateTime updateTime;
 
-    @Column(name = "del_flag", columnDefinition = "int(1) DEFAULT NULL COMMENT '删除标识位 0正常 1已删除'", length = 1)
+    @Column(name = "del_status", columnDefinition = "int(1) DEFAULT NULL COMMENT '删除标识位 0正常 1已删除'", length = 1)
     private Boolean delStatus;
 }
