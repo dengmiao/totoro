@@ -12,24 +12,11 @@
     <artifactId>security</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.cn.miao</groupId>
-            <artifactId>common</artifactId>
-            <version>${project.version}</version>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>com.cn.miao</groupId>
-            <artifactId>base</artifactId>
-            <version>${project.version}</version>
-            <optional>true</optional>
-        </dependency>
         <!-- 业务逻辑依赖 -->
         <dependency>
             <groupId>com.cn.miao</groupId>
             <artifactId>logic</artifactId>
             <version>${project.version}</version>
-            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -42,9 +29,20 @@
             <version>${jwt.version}</version>
         </dependency>
         <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>${javaee-api.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${redis.version}</version>
         </dependency>
     </dependencies>
 

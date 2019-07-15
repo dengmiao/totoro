@@ -19,6 +19,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @Accessors(chain = true)
+@Entity
 @Table(name = "sys_user")
 @Where(clause = "del_status = 0")
 public class SysUser extends BaseModel<Long> {

@@ -28,12 +28,20 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>12</java.version>
+        <jsoup.version>1.12.1</jsoup.version>
+        <javaee-api.version>8.0.1</javaee-api.version>
         <!-- guava -->
         <google.guava.version>27.0.1-jre</google.guava.version>
+        <!-- jasypt -->
+        <jasypt.version>2.1.1</jasypt.version>
         <!-- jwt -->
         <jwt.version>0.9.0</jwt.version>
         <!-- hutool -->
         <hutool.version>4.1.19</hutool.version>
+        <!-- spring-data-redis -->
+        <redis.version>2.1.6.RELEASE</redis.version>
+        <!-- UserAgentUtil -->
+        <userAgentUtil.version>1.21</userAgentUtil.version>
     </properties>
 
     <dependencies>

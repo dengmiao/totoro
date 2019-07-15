@@ -16,8 +16,7 @@ public interface SysUserRepository extends BaseRepository<SysUser, Long> {
     /**
      * 按用户名查询
      * @param username
-     * @param delStatus
      * @return
      */
-    SysUser findSysUserByUsernameAndDelStatus(String username, boolean delStatus);
+    SysUser findSysUserByUsername(String username);
 }

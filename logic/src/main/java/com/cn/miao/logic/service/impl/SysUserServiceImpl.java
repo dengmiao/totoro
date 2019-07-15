@@ -26,6 +26,6 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Override
     public SysUser findUserByUsername(String username, boolean delStatus) {
-        return sysUserRepository.findSysUserByUsernameAndDelStatus(username, delStatus);
+        return sysUserRepository.findSysUserByUsername(username);
     }
 }

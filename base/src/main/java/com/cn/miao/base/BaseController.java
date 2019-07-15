@@ -13,7 +13,7 @@ import java.lang.reflect.Type;
  * @author: dengmiao
  * @create: 2019-07-12 14:53
  **/
-public interface BaseController<E, ID extends Serializable> {
+public interface BaseController<E, ID extends Serializable> extends CommonController {
 
     /**
      * 获取注入的service
@@ -42,11 +42,7 @@ public interface BaseController<E, ID extends Serializable> {
 
     }
 
-    default ResponseEntity<Result<?>> wrapper(Result result) {
-        return Result.wrap(result);
-    }
-
     default ResponseEntity<Result<?>> list() {
-        return Result.wrap(Result.ok());
+        return wrap(Result.ok());
     }
 }

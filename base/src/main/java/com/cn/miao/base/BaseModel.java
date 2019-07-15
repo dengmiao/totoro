@@ -6,7 +6,6 @@ import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 
 import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
 import java.time.LocalDateTime;
 
 /**
@@ -18,7 +17,6 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @Accessors(chain = true)
-@MappedSuperclass
 public class BaseModel<T> {
 
     @Id
@@ -37,5 +35,5 @@ public class BaseModel<T> {
     private LocalDateTime updateTime;
 
     @Column(name = "del_status", columnDefinition = "int(1) DEFAULT NULL COMMENT '删除标识位 0正常 1已删除'", length = 1)
-    private Boolean delStatus;
+    private boolean delStatus;
 }

@@ -1,6 +1,28 @@
 # 项目其他配置
 totoro:
   project:
-    name: vue-master
+    name: totoro
     version: 1.0.0M1
     poweredBy: dengmiao
+  security:
+    # 登录页
+    login-page: /security/needLogin
+    # 登入
+    login-url: /login
+    # 登出
+    logout-url: /logout
+    # 忽略鉴权
+    ignoreUrls:
+      - /test/**
+      - /druid/**
+      - /swagger-ui.html
+      - /swagger-resources/**
+      - /swagger/**
+      - /**/v2/api-docs
+      - /**/*.js
+      - /**/*.css
+      - /**/*.png
+      - /**/*.jpg
+      - /**/*.ico
+    # token失效时间(分钟)
+    tokenExpireTime: 60
