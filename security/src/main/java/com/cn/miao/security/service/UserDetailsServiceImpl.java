@@ -1,4 +1,4 @@
-package com.cn.miao.security.config;
+package com.cn.miao.security.service;
 
 import com.cn.miao.logic.domain.model.system.SysUser;
 import com.cn.miao.logic.service.SysUserService;

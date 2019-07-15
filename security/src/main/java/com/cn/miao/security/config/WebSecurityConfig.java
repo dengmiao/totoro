@@ -7,6 +7,7 @@ import com.cn.miao.security.handler.TotoroAccessDeniedHandler;
 import com.cn.miao.security.handler.TotoroAuthenticationFailHandler;
 import com.cn.miao.security.handler.TotoroAuthenticationSuccessHandler;
 import com.cn.miao.security.properties.SecurityProperties;
+import com.cn.miao.security.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
