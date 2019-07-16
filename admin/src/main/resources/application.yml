@@ -4,6 +4,12 @@ server:
     context-path: /totoro
 
 spring:
+  mvc:
+    # 404抛出异常
+    throw-exception-if-no-handler-found: true
+  resources:
+    # 不为工程中的资源文件建立映射
+    add-mappings: false
   profiles:
     active:
       - dev

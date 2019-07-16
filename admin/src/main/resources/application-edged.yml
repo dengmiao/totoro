@@ -4,6 +4,9 @@ totoro:
     name: totoro
     version: 1.0.0M1
     poweredBy: dengmiao
+  upload:
+    # 文件上传目录
+    path: E://upFiles/totoro
   security:
     # 登录页
     login-page: /security/needLogin

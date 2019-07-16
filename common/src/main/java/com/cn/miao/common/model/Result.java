@@ -49,11 +49,17 @@ public class Result<T> {
 
     public static transient final HttpStatus OK = HttpStatus.OK;
 
+    public static transient final HttpStatus BAD_REQUEST = HttpStatus.BAD_REQUEST;
+
     public static transient final HttpStatus UNAUTHORIZED = HttpStatus.UNAUTHORIZED;
 
     public static transient final HttpStatus FORBIDDEN = HttpStatus.FORBIDDEN;
 
     public static transient final HttpStatus NOTFOUND = HttpStatus.NOT_FOUND;
+
+    public static transient final HttpStatus METHOD_NOT_ALLOWED = HttpStatus.METHOD_NOT_ALLOWED;
+
+    public static transient final HttpStatus UNSUPPORTED_MEDIA_TYPE = HttpStatus.UNSUPPORTED_MEDIA_TYPE;
 
     public static transient final HttpStatus ERROR = HttpStatus.INTERNAL_SERVER_ERROR;
 
@@ -79,6 +85,10 @@ public class Result<T> {
         return r;
     }
 
+    public static Result<?> bad_request(String msg) {
+        return error(BAD_REQUEST.value(), msg);
+    }
+
     public static Result<?> unauthorized(String msg) {
         return error(UNAUTHORIZED.value(), msg);
     }
@@ -91,7 +101,15 @@ public class Result<T> {
         return error(NOTFOUND.value(), msg);
     }
 
-    public static Result<Object> error(String msg) {
+    public static Result<?> method_not_allowed(String msg) {
+        return error(METHOD_NOT_ALLOWED.value(), msg);
+    }
+
+    public static Result<?> unsupported_media_type(String msg) {
+        return error(UNSUPPORTED_MEDIA_TYPE.value(), msg);
+    }
+
+    public static Result<?> error(String msg) {
         return error(ERROR.value(), msg);
     }
 

@@ -6,6 +6,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.env.Environment;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -19,6 +21,8 @@ import static org.springframework.security.config.Elements.HTTP;
  * @create: 2019-07-12 12:40
  **/
 @Slf4j
+@EnableScheduling
+@EnableAsync
 @SpringBootApplication
 public class AdminApplication {
 

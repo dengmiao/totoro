@@ -22,6 +22,12 @@ public class TestController implements CommonController {
         return wrap(Result.ok());
     }
 
+    @GetMapping("okErr")
+    public ResponseEntity<Result<?>> ok(String i) {
+        System.out.println(Integer.parseInt(i) / 0);
+        return wrap(Result.ok("操作成功"));
+    }
+
     @GetMapping("error")
     public ResponseEntity<Result<?>> error() {
         return wrap(Result.error("未知错误,请求失败"));
