@@ -1,5 +1,7 @@
 package com.cn.miao.common.constant;
 
+import org.springframework.http.HttpStatus;
+
 /**
  * @title: CommonConstant
  * @description:
@@ -49,5 +51,47 @@ public interface CommonConstant {
          * 用户token前缀key 单点登录使用
          */
         String USER_TOKEN = "CORGI_USER_TOKEN:";
+    }
+    
+    interface HttpState {
+        /**
+         * 200
+         */
+        HttpStatus OK = HttpStatus.OK;
+
+        /**
+         * 400
+         */
+        HttpStatus BAD_REQUEST = HttpStatus.BAD_REQUEST;
+
+        /**
+         * 401
+         */
+        HttpStatus UNAUTHORIZED = HttpStatus.UNAUTHORIZED;
+
+        /**
+         * 403
+         */
+        HttpStatus FORBIDDEN = HttpStatus.FORBIDDEN;
+
+        /**
+         * 404
+         */
+        HttpStatus NOTFOUND = HttpStatus.NOT_FOUND;
+
+        /**
+         * 405
+         */
+        HttpStatus METHOD_NOT_ALLOWED = HttpStatus.METHOD_NOT_ALLOWED;
+
+        /**
+         * 415
+         */
+        HttpStatus UNSUPPORTED_MEDIA_TYPE = HttpStatus.UNSUPPORTED_MEDIA_TYPE;
+
+        /**
+         * 500
+         */
+        HttpStatus ERROR = HttpStatus.INTERNAL_SERVER_ERROR;
     }
 }

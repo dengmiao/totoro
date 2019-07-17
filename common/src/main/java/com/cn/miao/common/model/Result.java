@@ -9,6 +9,7 @@ import javax.servlet.ServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static com.cn.miao.common.constant.CommonConstant.HttpState.*;
 import static com.cn.miao.common.constant.CommonConstant.Response;
 
 /**
@@ -18,7 +19,7 @@ import static com.cn.miao.common.constant.CommonConstant.Response;
  * @create: 2019-07-12 12:27
  **/
 @Data
-public class Result<T> {
+public final class Result<T> {
 
     private transient HttpStatus status;
 
@@ -46,22 +47,6 @@ public class Result<T> {
      * 时间戳
      */
     private long timestamp = System.currentTimeMillis();
-
-    public static transient final HttpStatus OK = HttpStatus.OK;
-
-    public static transient final HttpStatus BAD_REQUEST = HttpStatus.BAD_REQUEST;
-
-    public static transient final HttpStatus UNAUTHORIZED = HttpStatus.UNAUTHORIZED;
-
-    public static transient final HttpStatus FORBIDDEN = HttpStatus.FORBIDDEN;
-
-    public static transient final HttpStatus NOTFOUND = HttpStatus.NOT_FOUND;
-
-    public static transient final HttpStatus METHOD_NOT_ALLOWED = HttpStatus.METHOD_NOT_ALLOWED;
-
-    public static transient final HttpStatus UNSUPPORTED_MEDIA_TYPE = HttpStatus.UNSUPPORTED_MEDIA_TYPE;
-
-    public static transient final HttpStatus ERROR = HttpStatus.INTERNAL_SERVER_ERROR;
 
     public static Result<Object> ok() {
         return ok(null, null);
