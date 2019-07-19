@@ -1,4 +1,4 @@
-package com.cn.miao.logic.domain.repository;
+package com.cn.miao.logic.domain.repository.system;
 
 import com.cn.miao.base.BaseRepository;
 import com.cn.miao.logic.domain.model.system.SysUser;

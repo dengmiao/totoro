@@ -4,8 +4,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import javax.persistence.Column;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
@@ -17,9 +18,12 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @Accessors(chain = true)
-public class BaseModel<T> {
+@EntityListeners(AuditingEntityListener.class)
+public abstract class BaseModel<T> {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private T id;
 
     @Column(name = "create_by", columnDefinition = "varchar(255) DEFAULT NULL COMMENT '创建人'")

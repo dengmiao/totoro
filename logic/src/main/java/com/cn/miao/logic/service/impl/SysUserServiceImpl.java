@@ -2,7 +2,7 @@ package com.cn.miao.logic.service.impl;
 
 import com.cn.miao.base.BaseRepository;
 import com.cn.miao.logic.domain.model.system.SysUser;
-import com.cn.miao.logic.domain.repository.SysUserRepository;
+import com.cn.miao.logic.domain.repository.system.SysUserRepository;
 import com.cn.miao.logic.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
