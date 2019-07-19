@@ -1,8 +1,11 @@
 package com.cn.miao.admin.config;
 
 import com.cn.miao.admin.config.undertow.UndertowServerFactoryCustomizer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import io.undertow.Undertow;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.jackson.Jackson2ObjectMapperBuilderCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
@@ -12,6 +15,9 @@ import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
  * @title: WebMvcConfiguration
  * @description:
@@ -20,6 +26,23 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  **/
 @Configuration
 public class WebMvcConfiguration implements WebMvcConfigurer {
+
+    @Value("${spring.jackson.date-format:yyyy-MM-dd HH:mm:ss}")
+    private String pattern;
+
+    /**
+     * 全局日期格式化处理
+     * @return
+     */
+    @Bean
+    public LocalDateTimeSerializer localDateTimeDeserializer() {
+        return new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(pattern));
+    }
+
+    @Bean
+    public Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
+        return builder -> builder.serializerByType(LocalDateTime.class, localDateTimeDeserializer());
+    }
 
     @Bean
     @ConditionalOnClass(Undertow.class)
