@@ -23,6 +23,10 @@ public interface CommonConstant {
 
     interface Security {
         /**
+         * token key
+         */
+        String TOKEN_KEY = "totoroToken";
+        /**
          * token分割
          */
         String TOKEN_SPLIT = "Bearer ";
@@ -50,7 +54,7 @@ public interface CommonConstant {
         /**
          * 用户token前缀key 单点登录使用
          */
-        String USER_TOKEN = "CORGI_USER_TOKEN:";
+        String USER_TOKEN = "TOTORO_USER_TOKEN:";
     }
     
     interface HttpState {

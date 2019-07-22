@@ -61,7 +61,7 @@ public class TotoroAuthenticationSuccessHandler implements AuthenticationSuccess
                 .compact();
         Result.response(response, Result.ok(new HashMap<>(2){
             {
-                put("token", token);
+                put(Security.TOKEN_KEY, token);
             }
         }));
     }

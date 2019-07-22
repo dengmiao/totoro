@@ -3,8 +3,6 @@ package com.cn.miao.security.properties;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import java.util.List;
-
 import static com.cn.miao.security.properties.SecurityProperties.DEFAULT_PREFIX;
 
 /**
