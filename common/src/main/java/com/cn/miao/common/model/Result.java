@@ -117,13 +117,7 @@ public final class Result<T> {
     }
 
     public static void response(ServletResponse response, Result result) {
-        response.setCharacterEncoding("UTF-8");
-        response.setContentType("application/json");
-        try(PrintWriter out = response.getWriter()) {
-            out.println(wrap(result));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        response(response, wrap(result));
     }
 
     public static void response(ServletResponse response, ResponseEntity result) {
