@@ -44,6 +44,8 @@
         <userAgentUtil.version>1.21</userAgentUtil.version>
         <!-- spring-social -->
         <spring.social.version>1.1.6.RELEASE</spring.social.version>
+        <!-- 二维码相关 -->
+        <google.zxing.version>3.4.0</google.zxing.version>
     </properties>
 
     <dependencies>
