@@ -3,6 +3,7 @@ package com.cn.miao.admin.web.handler;
 import com.cn.miao.common.model.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -42,6 +43,11 @@ public class TotoroExceptionHandler {
     @ExceptionHandler(WebExchangeBindException.class)
     public ResponseEntity<Result<?>> handleBindException(WebExchangeBindException e) {
         return Result.wrap(Result.bad_request(toWebExchangeBindExceptionStr(e)));
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<Result<?>> auth(AccessDeniedException e) {
+        return Result.wrap(Result.unauthorized(e.getMessage()));
     }
 
     /**
