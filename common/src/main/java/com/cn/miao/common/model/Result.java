@@ -118,7 +118,15 @@ public final class Result<T> {
     }
 
     public static void response(ServletResponse response, Result result) {
-        response(response, wrap(result));
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("application/json");
+        try(PrintWriter out = response.getWriter()) {
+            String str = JSONUtil.formatJsonStr(JSONUtil.toJsonStr(result));
+            // 输出字符串
+            out.println(str);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void response(ServletResponse response, ResponseEntity result) {
