@@ -1,6 +1,7 @@
 package com.cn.miao.common.model;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -124,7 +125,9 @@ public final class Result<T> {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
         try(PrintWriter out = response.getWriter()) {
-            out.println(result);
+            String str = JSONUtil.formatJsonStr(JSONUtil.toJsonStr(result));
+            // 输出字符串
+            out.println(str);
         } catch (IOException e) {
             e.printStackTrace();
         }
