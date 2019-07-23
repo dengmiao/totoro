@@ -5,7 +5,9 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * @title: SecurityUserDetails
@@ -23,26 +25,29 @@ public class SecurityUserDetails extends SysUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        List<GrantedAuthority> authorityList = new ArrayList<>();
+        // 权限集合
+
+        return authorityList;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return this.getStatus() != null && this.getStatus().intValue() == 1 ? true : false;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return this.getStatus() != null && this.getStatus().intValue() == 1 ? true : false;
     }
 }

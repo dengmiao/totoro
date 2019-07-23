@@ -1,5 +1,6 @@
 package com.cn.miao.security.config;
 
+import com.cn.miao.security.filter.HttpAuthenticationEntryPoint;
 import com.cn.miao.security.filter.TotoroJwtAuthenticationFilter;
 import com.cn.miao.security.filter.TotoroLoginAuthenticationFilter;
 import com.cn.miao.security.filter.TotoroXssFilter;
@@ -14,13 +15,13 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
 import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
@@ -36,7 +37,6 @@ import java.util.Map;
  * @create: 2019-07-12 16:19
  **/
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Value("${totoro.security.tokenRedis:false}")
@@ -117,6 +117,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return jdbcTokenRepository;
     }
 
+    @Bean
+    public AuthenticationEntryPoint authenticationEntryPoint() {
+        return new HttpAuthenticationEntryPoint();
+    }
+
     /**
      * XssFilter Bean
      * @return
@@ -194,6 +199,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                     // 都需要认证
                     .authenticated()
+            .and()
+                .httpBasic().authenticationEntryPoint(authenticationEntryPoint())
             .and()
             .addFilter(new TotoroJwtAuthenticationFilter(authenticationManager(), tokenRedis, tokenExpireTime, redisTemplate))
             .addFilterAt(authenticationFilter(), UsernamePasswordAuthenticationFilter.class)
