@@ -31,20 +31,20 @@ public abstract class BaseModel<T> implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    protected T id;
+    private T id;
 
     @Column(name = "create_by", columnDefinition = "varchar(255) DEFAULT NULL COMMENT '创建人'")
-    protected String createBy;
+    private String createBy;
 
     @Column(name = "update_by", columnDefinition = "varchar(255) DEFAULT NULL COMMENT '更新人'")
-    protected String updateBy;
+    private String updateBy;
 
     @Column(name = "create_time", columnDefinition = "datetime COMMENT '创建时间'")
-    protected LocalDateTime createTime;
+    private LocalDateTime createTime;
 
     @Column(name = "update_time", columnDefinition = "datetime COMMENT '更新时间'")
-    protected LocalDateTime updateTime;
+    private LocalDateTime updateTime;
 
     @Column(name = "del_status", columnDefinition = "int(1) DEFAULT NULL COMMENT '删除标识位 0正常 1已删除'", length = 1)
-    protected boolean delStatus;
+    private boolean delStatus;
 }
