@@ -14,7 +14,7 @@
     <groupId>com.cn.miao</groupId>
     <artifactId>totoro</artifactId>
     <packaging>pom</packaging>
-    <version>1.0.0</version>
+    <version>${totoro.version}</version>
     <modules>
         <module>common</module>
         <module>admin</module>
@@ -28,6 +28,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>12</java.version>
+        <totoro.version>1.0.0</totoro.version>
         <jsoup.version>1.12.1</jsoup.version>
         <javaee-api.version>8.0.1</javaee-api.version>
         <!-- guava -->
