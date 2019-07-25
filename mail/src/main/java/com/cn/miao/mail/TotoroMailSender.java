@@ -44,7 +44,7 @@ public class TotoroMailSender {
      * 发送（带附件的）邮件
      */
     public void sendSimpleOrAttachmentMail(MailSenderParam params) {
-        MimeMessage message = null;
+        MimeMessage message;
         try {
             message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -60,29 +60,10 @@ public class TotoroMailSender {
     }
 
     /**
-     * 发送带附件的邮件
-     */
-    /*public void sendAttachmentMail(MailSenderParam params) {
-        MimeMessage message = null;
-        try {
-            message = javaMailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message, true);
-            helper.setFrom(new InternetAddress(this.getFrom(), MimeUtility.encodeText(this.name,"UTF-8", "B")));
-            helper.setTo(params.getMailTo());
-            helper.setSubject(params.getTitle());
-            helper.setText(params.getContent(), true);
-            this.addAttachment(helper,params);
-        } catch (Exception e) {
-            throw new RuntimeException("发送邮件异常! from: " + name + "! to: " + params.getMailTo());
-        }
-        javaMailSender.send(message);
-    }*/
-
-    /**
      * 发送html邮件
      */
     public void sendHtmlMail(MailSenderParam params) {
-        MimeMessage message = null;
+        MimeMessage message;
         try {
             message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
@@ -103,7 +84,7 @@ public class TotoroMailSender {
      * 发送模板邮件
      */
     public void sendTemplateMail(MailSenderParam params) {
-        MimeMessage message = null;
+        MimeMessage message;
         try {
             message = javaMailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true);
