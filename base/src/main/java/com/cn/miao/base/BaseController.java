@@ -26,7 +26,7 @@ public interface BaseController<E, ID extends Serializable> extends CommonContro
      * @param index
      * @return
      */
-    default Class<E> getClazz(int index) {
+    private Class<E> getClazz(int index) {
         // 获取class上的泛型类型
         // Class<E> clazz = (Class <E>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
 
