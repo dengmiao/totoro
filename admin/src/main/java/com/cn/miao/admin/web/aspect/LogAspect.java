@@ -31,7 +31,7 @@ public class LogAspect {
     /**
      * 配置 controller 切面
      */
-    @Pointcut(value = "execution(* *.cn.miao.*.*.*(..)) || execution(* *.cn.miao..*.controller.*.*(..)) || execution(* *.cn.miao.base.BaseController.*(..))")
+    @Pointcut(value = "execution(* *.cn.miao..*.controller.*.*(..)) || execution(* *.cn.miao.base.BaseController.*(..))")
     public void log() {
 
     }

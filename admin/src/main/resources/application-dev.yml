@@ -17,3 +17,8 @@ spring:
     database: 8
     port: 6379
     timeout: 3000
+  # mail
+  mail:
+    host: smtp.163.com
+    username: dengmiao1002@163.com
+    password: dengmiao1002

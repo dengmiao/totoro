@@ -21,6 +21,7 @@
         <module>security</module>
         <module>base</module>
         <module>logic</module>
+        <module>mail</module>
     </modules>
 
     <properties>

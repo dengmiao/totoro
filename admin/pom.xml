@@ -24,6 +24,12 @@
             <artifactId>security</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- 邮件服务 -->
+        <dependency>
+            <groupId>com.cn.miao</groupId>
+            <artifactId>mail</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!-- web依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -39,6 +45,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-undertow</artifactId>
+        </dependency>
+        <!-- 单元测试 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
