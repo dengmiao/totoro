@@ -45,3 +45,11 @@ totoro:
     aliyun:
       access-key-id: asdf
       access-key-secret: @@@
+  # 存储
+  storage:
+    type: aliyun
+    oss:
+      access-key-id: asdf
+      access-key-secret: fdsa
+      bucket-name: xxx
+      endpoint: xxx.xx.com

@@ -2,6 +2,7 @@ package com.cn.miao.logic.domain.model.system;
 
 import com.cn.miao.base.BaseModel;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 import org.hibernate.annotations.Where;
@@ -19,6 +20,7 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @Accessors(chain = true)
+@EqualsAndHashCode(callSuper = false)
 @Entity
 @Table(name = "sys_user")
 @Where(clause = "del_status = 0")
