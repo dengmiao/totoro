@@ -22,6 +22,7 @@
         <module>base</module>
         <module>logic</module>
         <module>mail</module>
+        <module>sms</module>
     </modules>
 
     <properties>
@@ -48,6 +49,8 @@
         <spring.social.version>1.1.6.RELEASE</spring.social.version>
         <!-- 二维码相关 -->
         <google.zxing.version>3.4.0</google.zxing.version>
+        <aliyun-java-sdk-core.version>3.3.0</aliyun-java-sdk-core.version>
+        <aliyun-java-sdk-dysmsapi.version>1.1.0</aliyun-java-sdk-dysmsapi.version>
     </properties>
 
     <dependencies>
