@@ -39,7 +39,7 @@
         <!-- jwt -->
         <jwt.version>0.9.0</jwt.version>
         <!-- hutool -->
-        <hutool.version>4.5.16</hutool.version>
+        <hutool.version>4.5.18</hutool.version>
         <!-- spring-data-redis -->
         <redis.version>2.1.6.RELEASE</redis.version>
         <!-- UserAgentUtil -->
